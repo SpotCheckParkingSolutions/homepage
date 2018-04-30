@@ -2,21 +2,26 @@
 <html>
 	<head>
 		<title>
-			spotcheck parking solutions
+			SpotCheck Parking Solutions
 		</title>
 		<link href="style.css" rel="stylesheet">
 	</head>
-
 	<body>
 	<div class="page-contents">
-		<div style="font-size:100px">
+		<div class="company-name">
 			SpotCheck Parking Solutions
 		</div>
-		<div style="font-size:80px">
+		<div class="desc">
 			website in progress
-		</div>
-		<div class="contact-us">
 		</div>
 	</div>
 	</body>
+	<!-- Dynamically render contact info to deter crawlers -->
+	<script src="contact.js"></script>
+	<!-- Alert user if they have js blocked -->
+	<noscript>
+		<div class="contact-us">
+			Contact information protected by JavaScript. Please enable JavaScript if you wish to contact us.
+		</div>
+	</noscript>
 </html>

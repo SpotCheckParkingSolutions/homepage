@@ -6,9 +6,26 @@ body {
 .page-contents {
   color: white;
   text-align: center;
-  margin-top:33vh;
+  margin-top:30vh;
+}
+
+.company-name {
+  font-size: 100px;
+}
+
+.desc {
+  margin-top: 7vh;
+  font-size: 80px;
 }
 
 .contact-us {
-  color: white
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  top: 10vh;
+}
+
+.contact-us-link {
+  color: #5990ea;
 }
