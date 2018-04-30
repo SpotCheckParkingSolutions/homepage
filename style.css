@@ -1,0 +1,14 @@
+body {
+  background:radial-gradient(circle at 0% 50%, #9521a0, #9d04f2);
+  font-family: sans-serif;
+}
+
+.page-contents {
+  color: white;
+  text-align: center;
+  margin-top:33vh;
+}
+
+.contact-us {
+  color: white
+}
