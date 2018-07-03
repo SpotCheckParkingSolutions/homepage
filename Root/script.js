@@ -1,13 +1,23 @@
-  //Main Routes   
+  //**********Main Routes**************   
     const products = { template: 
-        `<div>
-            <div>Our Products</div>
-            <router-view></router-view>
-        </div>`  };
-    const our_app = { template: '<div><div>App</div><router-view></router-view></div>' };
-    const about = { template: '<div><div>About Us</div><router-view></router-view></div>'};
-    const jobs = { template: '<div><div>Jobs</div><router-view></router-view></div>'};
-    const contact = { template: '<div><div>Contact</div>'};
+        `<div class="main-view">
+        <h2>Our Products</h2>
+        <router-view></router-view>
+    </div>`  };
+    const our_app = { template: `<div class="main-view"><h2>App</h2><router-view></router-view></div>` };
+    const about = { template: `<div class="main-view"><h2>About</h2><router-view></router-view></div>` };
+    const jobs = { template: `<div class="main-view"><h2>Jobs</h2><router-view></router-view></div>` };
+    const contact = { template: `<div class="main-view"><h2>Contact</h2></div>` };
+
+    //***********Side Bars **********
+    const productSidebar = {template: `
+        <nav>
+            <router-link to="/products/vision">Vision</router-link>
+            <router-link to="/products/data">Data</router-link>
+            <router-link to="/products/pricing">Pricing</router-link>
+            <router-link to="/products/quota">Get A Quota</router-link>
+        </nav>
+    `};
 
     //*********Sub Routes************
     //Products
@@ -18,7 +28,7 @@
 
     //App
     const coverage = { template: '<div>Coverage</div>' };
-    const myspotcheck = { template: '<div>My SpotCheck</div>' };
+    // const myspotcheck = { template: '<div>My SpotCheck</div>' };
     const map = { template: '<div>Map</div>' };
 
     //about
@@ -26,43 +36,55 @@
     const summary = { template: '<div>Summary</div>' };
 
     //Jobs
-    const full = { template: 'Part Time Listings' };
-    const part = { template: 'Part Time Listings'};
-    const contract = { template: 'Contract and Specific Project Listings'};
-    const newest = { template: 'New Job Openings'};
+    const full = { template: '<div>Part Time Listings</div>' };
+    const part = { template: '<div>Part Time Listings</div>' };
+    const contract = { template: '<div>Contract and Specific Project Listings</div>' };
+    const newest = { template: '<div>New Job Openings<div>' };
 
     
-
+    const testFunctionalRoutes = ()=>{
+        return [
+            
+        ]
+    }
 
     const routes = [
-        { path: '/products', component: products,
+        { path: '/products', 
+            components: 
+                {
+                    default: products,
+                    sidebar: productSidebar
+                },
+            children:  [{
+                path: '',
+                component: vision
+            },
+            {
+                path: 'vision',
+                component: vision
+            },
+            {
+                path: 'data',
+                component: data
+            },
+            {
+                path: 'pricing',
+                component: pricing
+            },
+            {
+                path: 'quota',
+                component: quota
+            }]
+        },
+        { path: '/ourapp', component: our_app,
             children: [
                 {
-                    path: 'vision',
-                    component: vision
+                    path: '',
+                    component: map
                 },
-                {
-                    path: 'data',
-                    component: data
-                },
-                {
-                    path: 'pricing',
-                    component: pricing
-                },
-                {
-                    path: 'quota',
-                    component: quota
-                }
-            ] },
-        { path: '/app', component: our_app,
-            childern: [
                 {
                     path: 'coverage',
                     component: coverage
-                },
-                {
-                    path: 'myspotcheck',
-                    component: myspotcheck
                 },
                 {
                     path: 'map',
@@ -72,6 +94,10 @@
             ] },
         { path: '/about', component: about,
             children: [
+                {
+                    path: '',
+                    component: summary
+                },
                 {
                     path: 'summary',
                     component: summary
@@ -83,7 +109,11 @@
 
             ]},
         { path: '/jobs', component: jobs,
-            childern:[
+            children:[
+                {
+                    path: '',
+                    component: newest
+                },
                 {
                     path: 'full',
                     component: full
@@ -97,7 +127,7 @@
                     component: contract
                 },
                 {
-                    path: 'new',
+                    path: 'newest',
                     component: newest
                 }
             ]},
