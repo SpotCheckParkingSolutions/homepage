@@ -1,27 +1,51 @@
-<!DOCTYPE html>
+<!DOCTYPE <!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			SpotCheck Parking Solutions
-		</title>
-		<link href="style.css" rel="stylesheet">
-	</head>
-	<body>
-	<div class="page-contents">
-		<div class="company-name">
-			SpotCheck Parking Solutions
-		</div>
-		<div class="desc">
-			website in progress
-		</div>
-	</div>
-	</body>
-	<!-- Dynamically render contact info to deter crawlers -->
-	<script src="contact.js"></script>
-	<!-- Alert user if they have js blocked -->
-	<noscript>
-		<div class="contact-us">
-			Contact information protected by JavaScript. Please enable JavaScript if you wish to contact us.
-		</div>
-	</noscript>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+	<div id="app">
+			<h1>SpotCheck Parking Solutions</h1>
+			<p>
+				<router-link to="/products">>Products & Services</router-link>
+				<router-link to="/app">App</router-link>
+				<router-link to="/about">About Us</router-link>
+				<router-link to="/jobs">Jobs</router-link>
+				<router-link to="/contact">Contact Us</router-link>
+			</p>
+			<router-view></router-view>
+			</div>
+    <script>
+       
+        const products = { template: '<div>Products and Services</div>' }
+        const our_app = { template: '<div>App</div>' }
+        const about = { template: '<div>About Us</div>'}
+		const jobs = { template: '<div>Jobs</div>'}
+		const contact = { template: '<div>Contact</div>'}
+		
+        const routes = [
+          { path: '/products', component: products },
+          { path: '/app', component: our_app },
+          { path: '/about', component: about},
+		  { path: '/jobs', component: jobs},
+		  { path: '/contact', component: contact}
+        ]
+        
+       
+        const router = new VueRouter({
+          routes
+        })
+        
+        const app = new Vue({
+          router
+        }).$mount('#app')
+        
+    </script>
+</body>
 </html>
