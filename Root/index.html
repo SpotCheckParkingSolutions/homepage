@@ -1,0 +1,26 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+	<div id="app">
+			<h1>SpotCheck Parking Solutions</h1>
+			<p>
+				<router-link to="/products">Products & Services</router-link>
+				<router-link to="/app">App</router-link>
+				<router-link to="/about">About Us</router-link>
+				<router-link to="/jobs">Jobs</router-link>
+				<router-link to="/contact">Contact Us</router-link>
+			</p>
+			<router-view></router-view>
+	</div>
+    <script src='script.js'></script>
+</body>
+</html>
