@@ -12,16 +12,23 @@
 </head>
 <body>
 	<div id="app">
-			<h1>SpotCheck Parking Solutions</h1>
-			<p>
-				<router-link to="/products">Products & Services</router-link>
-				<router-link to="/ourapp">App</router-link>
-				<router-link to="/about">About Us</router-link>
-				<router-link to="/jobs">Jobs</router-link>
-				<router-link to="/contact">Contact Us</router-link>
-			</p>
-			<router-view></router-view>
-			<router-view name="sidebar"></router-view>
+		<div class='upper-wrapper'>
+			<div class="header">
+				<h1>SpotCheck Parking Solutions</h1>
+				<nav class="main-nav">
+					<router-link to="/products">Products & Services</router-link>
+					<router-link to="/app">App</router-link>
+					<router-link to="/about">About Us</router-link>
+					<router-link to="/jobs">Jobs</router-link>
+					<router-link to="/contact">Contact Us</router-link>
+				</nav>
+			</div>
+			<div class="body">
+				<router-view></router-view>
+				<router-view name="sidebar"></router-view>
+			</div>
+	</div>
+	<div class="footer">Footer</div>
 	</div>
 	<script src='script.js'></script>
 </body>
