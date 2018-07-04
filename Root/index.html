@@ -6,29 +6,36 @@
     <title>Page Title</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
 	<div id="app">
-		<div class='upper-wrapper'>
+			<div class="icon"></div>
 			<div class="header">
-				<h1>SpotCheck Parking Solutions</h1>
-				<nav class="main-nav">
-					<router-link to="/products">Products & Services</router-link>
-					<router-link to="/app">App</router-link>
-					<router-link to="/about">About Us</router-link>
-					<router-link to="/jobs">Jobs</router-link>
-					<router-link to="/contact">Contact Us</router-link>
-				</nav>
+				<div>
+					<h1>SpotCheck Parking Solutions</h1>
+					<nav class="main-nav">
+						<router-link to="/products">Products & Services</router-link>
+						<router-link to="/app">App</router-link>
+						<router-link to="/about">About Us</router-link>
+						<router-link to="/jobs">Jobs</router-link>
+						<router-link to="/contact">Contact Us</router-link>
+					</nav>
+				</div>
+				<img src='./icon.ico' alt='icon' class='icon'>
 			</div>
-			<div class="body">
-				<router-view></router-view>
-				<router-view name="sidebar"></router-view>
+			<router-view></router-view>
+			<router-view name="sidebar"></router-view>
+			<div class="footer">
+				<div>
+					<p>SpotCheck 2018</p>
+					<p>All Content Copyright SpotCheck Parking Solutions</p>
+				</div>
 			</div>
 	</div>
-	<div class="footer">Footer</div>
+	
 	</div>
 	<script src='script.js'></script>
 </body>
