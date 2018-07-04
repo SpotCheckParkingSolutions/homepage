@@ -57,10 +57,10 @@
     const jobsSidebar = {template: `
         <div class="sub-nav">
             <nav>
-                <router-link to="/jobs/new">New</router-link>
+                <router-link to="/jobs/newest">New</router-link>
                 <router-link to="/jobs/full">Full Time</router-link>
                 <router-link to="/jobs/part">Part Time</router-link>
-                <router-link to="/jobs/cotract">Contract/Temporary</router-link>
+                <router-link to="/jobs/contract">Contract/Temporary</router-link>
             </nav>
         </div>
     `
@@ -134,8 +134,23 @@
         </div>` };
 
     //about
-    const leadership = { template: '<div>Leadership</div>' };
-    const summary = { template: '<div>Summary</div>' };
+    const leadership = { template: `
+    <div class="sub-view">
+        <h3>Leadership</h3>
+        <ul>
+            <li>Jacob van de Lindt- CEO</li>
+            <li>Taylor Griffin- CTO</li>
+            <li>Alex De Paz - COO</li>
+            <li>Cooper Runstein- CFO</li>
+        </ul>
+    </div>` };
+    const summary = { template: `
+    <div class="sub-view">
+        <h3>Summary</h3>
+        <div class="text-blocks">
+            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+        </div>
+    </div>` };
 
     //Jobs
     const full = { template: '<div>Part Time Listings</div>' };
