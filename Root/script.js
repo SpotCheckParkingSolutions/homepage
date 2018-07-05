@@ -158,17 +158,21 @@
     const contract = { template: '<div>Contract and Specific Project Listings</div>' };
     const newest = { template: '<div>New Job Openings<div>' };
 
+
+    const subMenus = {
+    };
+    subMenus['sidebar-products'] = productSidebar;
+    subMenus['sidebar-app'] = appSidebar;
+    subMenus['sidebar-jobs'] = jobsSidebar;
+    subMenus['sidebar-about'] = aboutSidebar;
+
     //Routes Declared
     const routes = [
         {path: '',
             redirect: '/about'
         },
         { path: '/products', 
-            components: 
-                {
-                    default: products,
-                    sidebar: productSidebar
-                },
+            components: Object.assign({default:products}, subMenus),
             children:  [{
                 path: '',
                 component: vision
@@ -191,10 +195,7 @@
             }]
         },
         { path: '/app', 
-            components: {
-                default: our_app,
-                sidebar: appSidebar
-            },
+            components: Object.assign({default: our_app}, subMenus),
             children: [
                 {
                     path: '',
@@ -211,10 +212,7 @@
                 
             ] },
         { path: '/about', 
-            components: {
-                default: about,
-                sidebar: aboutSidebar
-            },
+        components: Object.assign({default: about}, subMenus),
             children: [
                 {
                     path: '',
@@ -230,10 +228,8 @@
                 },
 
             ]},
-        { path: '/jobs', components: {
-            default: jobs,
-            sidebar: jobsSidebar
-        },
+        { path: '/jobs', 
+            components: Object.assign({default: jobs}, subMenus),
             children:[
                 {
                     path: '',
@@ -256,7 +252,7 @@
                     component: newest
                 }
             ]},
-        { path: '/contact', component: contact}
+        { path: '/contact', components: Object.assign({default: contact}, subMenus)}
     ]
 
     //Create VueRouter Object

@@ -12,27 +12,40 @@
 </head>
 <body>
 	<div id="app">
-			<div class="icon"></div>
+			
 			<div class="header">
-				<div>
 					<h1>SpotCheck Parking Solutions</h1>
 					<nav class="main-nav">
-						<router-link to="/products">Products & Services</router-link>
-						<router-link to="/app">App</router-link>
-						<router-link to="/about">About Us</router-link>
-						<router-link to="/jobs">Jobs</router-link>
-						<router-link to="/contact">Contact Us</router-link>
+						<div>
+							<router-link to="/products" class="main-link">Products & Services</router-link>
+							<router-view name="sidebar-products"></router-view>
+						</div>
+						<div>
+							<router-link to="/app" class="main-link">App</router-link>
+							<router-view name="sidebar-app"></router-view>
+						</div>
+						<div>
+							<router-link to="/about" class="main-link">About Us</router-link>
+							<router-view name="sidebar-about"></router-view>
+						</div>
+						<div>
+							<router-link to="/jobs" class="main-link">Jobs</router-link>
+							<router-view name="sidebar-jobs"></router-view>
+						</div>
+						<div>
+							<router-link to="/contact" class="main-link">Contact Us</router-link>
+							
+						</div>
 					</nav>
-				</div>
-				<img src='./icon.ico' alt='icon' class='icon'>
 			</div>
 			<router-view></router-view>
-			<router-view name="sidebar"></router-view>
+			
 			<div class="footer">
 				<div>
 					<p>SpotCheck 2018</p>
 					<p>All Content Copyright SpotCheck Parking Solutions</p>
 				</div>
+				<img src='./icon.ico' alt='icon' class='icon'>
 			</div>
 	</div>
 	
