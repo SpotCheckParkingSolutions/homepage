@@ -75,6 +75,9 @@ html{
 .main-nav div a:hover{
     font-weight: bolder;
 }
+.main-link{
+    position: relative;
+}
 /*Display dropdown nav" */
 .main-link:hover + div{
     display: block;
@@ -126,7 +129,13 @@ html{
 
 .sub-nav{
     background: #f8a05f;
+    position: relative;
+    bottom: 1px;
     display: none;
+}
+
+.sub-nav:hover{
+    display: block;
 }
 
 .sub-nav nav{
