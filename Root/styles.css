@@ -36,6 +36,7 @@ html{
     grid-template-columns: 1fr 3fr 3fr;
     grid-template-rows: 20vh 3fr 3fr 1fr;
     grid-row-gap: 2rem;
+    color: #292f33;
 }
 
 /*Use classes as selectors from here on, not id*/
@@ -168,15 +169,48 @@ html{
     text-align: center;
 }
 
-.main-view h2{
+/* .main-view h2{
     margin-top: 2rem;
-    font-size: 3rem;
-  }
-.sub-view h3{
-    font-size: 2.5rem;
-    margin-top: 2rem;
+    font-size: 5rem;
+  } */
+.sub-view{
+    margin-top: 4rem;
+    min-height: 100vh;
 }
 
+.sub-view h3{
+  font-size: 2rem;
+}
+
+.arrow{
+  height: 5rem;
+  width: auto;
+  position: absolute;
+  margin-top: 20vh;
+  transition: height .5s, transform .5s;
+}
+
+.arrow:hover{
+  height: 6rem;
+}
+
+.back{
+  left: 10vw;
+}
+
+.forward{
+  right: 10vw;
+}
+
+
+.back:hover{
+  transform: translate(-2vw);
+  padding-right: 2vw;
+}
+.forward:hover{
+  transform: translate(2vw);
+  padding-left: 2vw;
+}
 
 .text-blocks {
     position: relative;
@@ -194,6 +228,11 @@ html{
     font-size: 2rem;
 }
 
+.adminToolsImg{
+  width: 60vw;
+  height: auto;
+}
+
 /*******************/
 /*>>>>>Footer>>>>>>/
 /*******************/
@@ -203,24 +242,25 @@ html{
     grid-area: footer;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    border-top: 5px solid;
+    align-items: center;
+    border-top: 2px solid #292f33;
 }
 
-.footer div{
+.websiteInfo{
     padding-left: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
+    justify-content: space-around;
+    height: 30%;
 }
 
-.icon{
-    padding-right: 1rem;
-    max-width: 10vw;
-    max-height: 10vw;
-    height: auto;
-    float: right;
+.socialMedia{
+  padding-right: 2rem;
+}
+
+.socialMedia img{
+  height: 5vh;
+  width: auto;
 }
 
 .router-link-active{
@@ -228,6 +268,20 @@ html{
 }
 .router-link-active:visited{
     color: green;
+}
+
+.openingTitle{
+  max-width: 50vw;
+  font-size: 5rem;
+  color: #292f33;
+}
+
+.openingContainer{
+  box-sizing: content-box;
+  border-top: white 4px solid;
+  margin-top: -1px;
+  border-bottom: 1px white solid;
+  box-shadow: 1px 2px 30px rebeccapurple;
 }
 
 @media only screen and (min-width: 900px) {
@@ -245,5 +299,11 @@ html{
 
   .header h1{
     padding-right: 2.5vw;
+  }
+
+  .openingTitle{
+    max-width: 40vw;
+    margin-left: 5vw;
+
   }
 }
