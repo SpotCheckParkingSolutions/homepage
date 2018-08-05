@@ -3,11 +3,11 @@
     const products = { template:
         `<div class="main-view">
         <div class="openingContainer"><h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
-        <router-link to="vision"><img class='back arrow' alt='back' src='./back.svg'/></router-link>
-        <router-link to="vision"><img class='forward arrow' alt='forward' src='./right-arrow.svg' /></router-link>
-        <transition name='fade'>
-          <router-view></router-view>
-        </transition>
+          <router-link to='data'><img class='back arrow' alt='back' src='./back.svg'/></router-link>
+          <router-link to="vision"><img class='forward arrow' alt='forward' src='./right-arrow.svg' /></router-link>
+          <transition name='fade'>
+            <router-view></router-view>
+          </transition>
     </div>`  };
     const our_app = { template:
       `<div class="main-view">
@@ -137,7 +137,7 @@
         <div class="sub-view">
             <h3>Administration Tools</h3>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <img class='adminToolsImg' src='./admintools(1).png' alt='admin tools'>
+            <img class='adminToolsImg' src='./admintools.png' alt='admin tools'>
         </div>` };
 
     //about
@@ -263,6 +263,9 @@
     //Mount app with Router
     const app = new Vue({
         router,
+        data: {
+          route: this.$router
+        }
     }).$mount('#app')
 
 

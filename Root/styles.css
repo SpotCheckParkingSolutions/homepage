@@ -392,3 +392,7 @@ html{
   transform: translate(100vw);
   /* opacity: 0; */
 }
+
+.not-active a{
+  color: #292f33;
+}
