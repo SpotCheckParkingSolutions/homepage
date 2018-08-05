@@ -5,41 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
 	<div id="app">
-			
+
 			<div class="header">
 					<h1>SpotCheck Parking Solutions</h1>
 					<nav class="main-nav">
 						<div>
 							<router-link to="/products" class="main-link">Products & Services</router-link>
-							<router-view name="sidebar-products"></router-view>
+							<!-- <router-view name="sidebar-products"></router-view> -->
 						</div>
 						<div>
 							<router-link to="/app" class="main-link">App</router-link>
-							<router-view name="sidebar-app"></router-view>
+							<!-- <router-view name="sidebar-app"></router-view> -->
 						</div>
 						<div>
 							<router-link to="/about" class="main-link">About Us</router-link>
-							<router-view name="sidebar-about"></router-view>
+							<!-- <router-view name="sidebar-about"></router-view> -->
 						</div>
 						<div>
 							<router-link to="/jobs" class="main-link">Jobs</router-link>
-							<router-view name="sidebar-jobs"></router-view>
+							<!-- <router-view name="sidebar-jobs"></router-view> -->
 						</div>
 						<div>
 							<router-link to="/contact" class="main-link">Contact Us</router-link>
-							
 						</div>
 					</nav>
 			</div>
 			<router-view></router-view>
-			
+
 			<div class="footer">
 				<div>
 					<p>SpotCheck 2018</p>
@@ -48,8 +48,22 @@
 				<img src='./icon.ico' alt='icon' class='icon'>
 			</div>
 	</div>
-	
+
 	</div>
-	<script src='script.js'></script>
+  <script src='script.js'></script>
+  <script>
+    window.onscroll = function() {myFunction()};
+
+    var header = document.querySelector(".header");
+
+    function myFunction() {
+      console.log('onScroll Called');
+      if (window.pageYOffset > 0) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+    </script>
 </body>
 </html>

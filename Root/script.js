@@ -1,11 +1,15 @@
-(()=>{ 
-  //**********Main Route Templates**************   
-    const products = { template: 
+(()=>{
+  //**********Main Route Templates**************
+    const products = { template:
         `<div class="main-view">
         <h2>Our Products</h2>
         <router-view></router-view>
     </div>`  };
-    const our_app = { template: `<div class="main-view"><h2>App</h2><router-view></router-view></div>` };
+    const our_app = { template:
+      `<div class="main-view">
+        <h2>App</h2>
+        <router-view></router-view>
+      </div>` };
     const about = { template: `<div class="main-view"><h2>About</h2><router-view></router-view></div>` };
     const jobs = { template: `<div class="main-view"><h2>Jobs</h2><router-view></router-view></div>` };
     const contact = { template: `
@@ -24,7 +28,7 @@
             }
         }
     }
-    
+
 
     //***********Side Bar Templates **********
     const productSidebar = {template: `
@@ -37,7 +41,7 @@
         </nav>
     </div>
     `};
-    
+
     const appSidebar = {template: `
     <div class="sub-nav">
         <nav>
@@ -79,9 +83,9 @@
                 <h4>Section 3</h4>
                 <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
             </div>
-            
 
-        </div>` 
+
+        </div>`
     };
     const data = { template: `
     <div class='sub-view'>
@@ -93,9 +97,9 @@
             <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
             <h4>Section 3</h4>
             <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-            
+
         </div>
-        
+
     </div>`  };
     const pricing = { template: `<div class='sub-view'>
     <h3>Pricing</h3>
@@ -106,9 +110,9 @@
         <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
         <h4>Section 3</h4>
         <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-        
+
     </div>
-    
+
 </div>` };
     const quote = { template: `<div class='sub-view'>
     <h3>Get a Quote</h3>
@@ -116,9 +120,9 @@
         <h4>Section 1</h4>
         <img src='./money.jpg' alt='money' height='400px' width='auto'>
         <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-        
+
     </div>
- 
+
 </div>` };
 
     //App
@@ -171,7 +175,7 @@
         {path: '',
             redirect: '/about'
         },
-        { path: '/products', 
+        { path: '/products',
             components: Object.assign({default:products}, subMenus),
             children:  [{
                 path: '',
@@ -194,7 +198,7 @@
                 component: quote
             }]
         },
-        { path: '/app', 
+        { path: '/app',
             components: Object.assign({default: our_app}, subMenus),
             children: [
                 {
@@ -209,9 +213,9 @@
                     path: 'map',
                     component: map
                 },
-                
+
             ] },
-        { path: '/about', 
+        { path: '/about',
         components: Object.assign({default: about}, subMenus),
             children: [
                 {
@@ -228,7 +232,7 @@
                 },
 
             ]},
-        { path: '/jobs', 
+        { path: '/jobs',
             components: Object.assign({default: jobs}, subMenus),
             children:[
                 {
@@ -262,8 +266,8 @@
 
     //Mount app with Router
     const app = new Vue({
-        router, 
+        router,
     }).$mount('#app')
 
-    
+
 })();
