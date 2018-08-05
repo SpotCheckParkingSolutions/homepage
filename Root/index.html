@@ -15,25 +15,25 @@
 	<div id="app">
 
 			<div class="header">
-					<h1>SpotCheck Parking Solutions</h1>
+					<h1 >SpotCheck Parking Solutions</h1>
 					<nav class="main-nav">
 						<div>
 							<router-link to="/products" class="main-link">Products & Services</router-link>
-							<!-- <router-view name="sidebar-products"></router-view> -->
+							<router-view name="sidebar-products"></router-view>
 						</div>
 						<div>
 							<router-link to="/app" class="main-link">App</router-link>
-							<!-- <router-view name="sidebar-app"></router-view> -->
+							<router-view name="sidebar-app"></router-view>
 						</div>
 						<div>
 							<router-link to="/about" class="main-link">About Us</router-link>
-							<!-- <router-view name="sidebar-about"></router-view> -->
+							<router-view name="sidebar-about"></router-view>
 						</div>
 						<div>
 							<router-link to="/jobs" class="main-link">Jobs</router-link>
-							<!-- <router-view name="sidebar-jobs"></router-view> -->
+							<router-view name="sidebar-jobs"></router-view>
 						</div>
-						<div>
+						<div class='contact'>
 							<router-link to="/contact" class="main-link">Contact Us</router-link>
 						</div>
 					</nav>
@@ -41,22 +41,31 @@
 			<router-view></router-view>
 
 			<div class="footer">
-				<div>
+				<div class="websiteInfo">
 					<p>SpotCheck 2018</p>
 					<p>All Content Copyright SpotCheck Parking Solutions</p>
 				</div>
-				<img src='./icon.ico' alt='icon' class='icon'>
+        <div class="socialMedia">
+          <img class='instagram' alt='instagram' src='./instagram.png'/>
+          <img class='facebook' alt='facebook' src='./facebook.svg'/>
+          <span class='facebookText mediaText'> Come Visit Us on Facebook!</span>
+          <span class='instaText mediaText'>Want to see what we're up to? Come check it out on Instagram!</span>
+        </div>
 			</div>
 	</div>
 
 	</div>
   <script src='script.js'></script>
   <script>
-    window.onscroll = function() {myFunction()};
+    window.onscroll = function() {
+      headerFunction();
+      bottomFunction();
+
+    };
 
     var header = document.querySelector(".header");
 
-    function myFunction() {
+    function headerFunction() {
       console.log('onScroll Called');
       if (window.pageYOffset > 0) {
         header.classList.add("sticky");
@@ -64,6 +73,14 @@
         header.classList.remove("sticky");
       }
     }
+
+    let bottomFunction = (ev)=> {
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+        document.querySelector('.contact').classList.add('bottom');
+    } else{
+      document.querySelector('.contact').classList.remove('bottom');
+    }
+};
     </script>
 </body>
 </html>

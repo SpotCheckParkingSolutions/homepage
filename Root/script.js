@@ -2,8 +2,12 @@
   //**********Main Route Templates**************
     const products = { template:
         `<div class="main-view">
-        <h2>Our Products</h2>
-        <router-view></router-view>
+        <div class="openingContainer"><h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
+        <router-link to="vision"><img class='back arrow' alt='back' src='./back.svg'/></router-link>
+        <router-link to="vision"><img class='forward arrow' alt='forward' src='./right-arrow.svg' /></router-link>
+        <transition name='fade'>
+          <router-view></router-view>
+        </transition>
     </div>`  };
     const our_app = { template:
       `<div class="main-view">
@@ -34,10 +38,8 @@
     const productSidebar = {template: `
     <div class="sub-nav">
         <nav>
-            <router-link to="/products/vision">Vision</router-link>
+            <router-link to="/products/vision">Machine Vision</router-link>
             <router-link to="/products/data">Data</router-link>
-            <router-link to="/products/pricing">Pricing</router-link>
-            <router-link to="/products/quote">Get A Quote</router-link>
         </nav>
     </div>
     `};
@@ -74,7 +76,7 @@
     //Products
     const vision = { template: `
         <div class='sub-view'>
-            <h3>Vision Network</h3>
+            <h3>SpotCheck's State of the Art Vision Network</h3>
             <div class="text-blocks">
                 <h4>Section 1</h4>
                 <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
@@ -89,7 +91,7 @@
     };
     const data = { template: `
     <div class='sub-view'>
-        <h3>Data Services</h3>
+        <h3>Ethical, Privacy First Data Services</h3>
         <div class="text-blocks">
             <h4>Section 1</h4>
             <p>Backing equity hypotheses niche market alpha crowdfunding hackathon first mover advantage lean startup ownership. Strategy ramen graphical user interface research & development metrics disruptive pitch bandwidth customer market. Buzz influencer metrics venture angel investor partnership. Network effects rockstar hackathon buyer accelerator. Branding early adopters first mover advantage angel investor agile development crowdfunding influencer return on investment. Analytics iPhone monetization learning curve influencer. Handshake creative mass market monetization seed money focus release startup paradigm shift churn rate responsive web design. Churn rate research & development marketing disruptive deployment equity gen-z freemium crowdfunding assets responsive web design. Network effects branding ownership. Stealth long tail android crowdsource alpha rockstar success traction ramen.</p>
@@ -133,8 +135,9 @@
     </div>`};
     const map = { template: `
         <div class="sub-view">
-            <h3>Map</h3>
-            <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=portland%2C%20or&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de">maps-erstellen.de</a></div><style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+            <h3>Administration Tools</h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <img class='adminToolsImg' src='./admintools(1).png' alt='admin tools'>
         </div>` };
 
     //about
@@ -179,7 +182,7 @@
             components: Object.assign({default:products}, subMenus),
             children:  [{
                 path: '',
-                component: vision
+                redirect: '/products/vision'
             },
             {
                 path: 'vision',
@@ -189,14 +192,7 @@
                 path: 'data',
                 component: data
             },
-            {
-                path: 'pricing',
-                component: pricing
-            },
-            {
-                path: 'quote',
-                component: quote
-            }]
+              ]
         },
         { path: '/app',
             components: Object.assign({default: our_app}, subMenus),
