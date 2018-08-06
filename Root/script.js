@@ -1,14 +1,21 @@
 (()=>{
   //**********Main Route Templates**************
-    const products = { template:
+    // const back = {
+    //   props: ['route'],
+    //   template: "<router-link to={{route}}><img class='back arrow' alt='back' src='./back.svg'/></router-link>"
+
+    // }
+    const products = {
+
+      template:
         `<div class="main-view">
         <div class="openingContainer"><h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
-          <router-link to='data'><img class='back arrow' alt='back' src='./back.svg'/></router-link>
-          <router-link to="vision"><img class='forward arrow' alt='forward' src='./right-arrow.svg' /></router-link>
           <transition name='fade'>
             <router-view></router-view>
           </transition>
-    </div>`  };
+        </div>`
+      };
+
     const our_app = { template:
       `<div class="main-view">
         <h2>App</h2>
@@ -31,7 +38,7 @@
                 }
             }
         }
-    }
+    };
 
 
     //***********Side Bar Templates **********
@@ -179,7 +186,7 @@
             redirect: '/about'
         },
         { path: '/products',
-            components: Object.assign({default:products}, subMenus),
+            components: Object.assign({default: products}, subMenus),
             children:  [{
                 path: '',
                 redirect: '/products/vision'
@@ -264,7 +271,8 @@
     const app = new Vue({
         router,
         data: {
-          route: this.$router
+          route: this.$router,
+          s: 'hello'
         }
     }).$mount('#app')
 
