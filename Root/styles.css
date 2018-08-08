@@ -161,9 +161,6 @@ html{
     border-right: .2rem solid;
 }
 
-.main-link:not(:nth-last-child(2)){
-
-}
 
 /*******************/
 /*>>>>>Body >>>>>>/
@@ -237,6 +234,30 @@ html{
   height: auto;
 }
 
+.inLineContact{
+  padding: 10px;
+  border-radius: 15px;
+  background-color: royalblue;
+  color: white;
+  font-size: 30px;
+  margin-top: 2vh;
+  transition: box-shadow .5s;
+}
+
+.inLineContact:hover{
+  box-shadow: 1px 1px 30px royalblue;
+  cursor: pointer;
+
+}
+
+
+.inLineContact a{
+  color: white;
+}
+
+.inLineContact a:visited{
+  color: white;
+}
 /*******************/
 /*>>>>>Footer>>>>>>/
 /*******************/

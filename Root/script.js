@@ -79,7 +79,7 @@
     <div class="sub-nav">
         <nav>
             <router-link to="/app/coverage">Coverage</router-link>
-            <router-link to="/app/map">Map</router-link>
+            <router-link to="/app/tools">Tools</router-link>
         </nav>
     </div>
 `};
@@ -162,9 +162,11 @@
     const coverage = { template: `
     <div class="sub-view">
         <h3>Coverage</h3>
-        <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=portland%2C%20or&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de">maps-erstellen.de</a></div><style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+        <div><h2>Help Us Bring SpotCheck to An Area near You. </h2>
+        <button class="inLineContact"><router-link to="/contact">Contact Us</router-link></button>
+        </div>
     </div>`};
-    const map = { template: `
+    const tools = { template: `
         <div class="sub-view">
             <h3>Administration Tools</h3>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -254,15 +256,15 @@
             children: [
                 {
                     path: '',
-                    component: map
+                    component: tools
                 },
                 {
                     path: 'coverage',
                     component: coverage
                 },
                 {
-                    path: 'map',
-                    component: map
+                    path: 'tools',
+                    component: tools
                 },
 
             ] },
