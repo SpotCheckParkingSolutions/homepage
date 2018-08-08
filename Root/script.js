@@ -1,24 +1,55 @@
 (()=>{
   //**********Main Route Templates**************
-    const products = { template:
+    // const back = {
+    //   props: ['route'],
+    //   template: "<router-link to={{route}}><img class='back arrow' alt='back' src='./back.svg'/></router-link>"
+
+    // }
+    const products = {
+
+      template:
         `<div class="main-view">
-        <div class="openingContainer"><h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
-        <router-link to="vision"><img class='back arrow' alt='back' src='./back.svg'/></router-link>
-        <router-link to="vision"><img class='forward arrow' alt='forward' src='./right-arrow.svg' /></router-link>
-        <transition name='fade'>
-          <router-view></router-view>
-        </transition>
-    </div>`  };
+        <div class="openingContainer">
+        <h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
+          <transition name='fade'>
+            <router-view></router-view>
+          </transition>
+        </div>`
+      };
+
     const our_app = { template:
       `<div class="main-view">
-        <h2>App</h2>
+
+      <div class="openingContainer">
+        <h2 class='openingTitle'>State of the art tools.</h2>
+        <h3 class='openingSubTitle'>Making Parking Administration a Breeze.</h3>
+      </div>
         <router-view></router-view>
       </div>` };
-    const about = { template: `<div class="main-view"><h2>About</h2><router-view></router-view></div>` };
-    const jobs = { template: `<div class="main-view"><h2>Jobs</h2><router-view></router-view></div>` };
+    const about = { template: `
+      <div class="main-view">
+          <div class="openingContainer">
+            <h2 class='openingTitle'>Your destination has arrived.</h2>
+          </div>
+        <router-view></router-view>
+        </div>` };
+    const jobs = { template: `
+      <div class="main-view">
+
+          <div class="openingContainer">
+            <h2 class='openingTitle'>Work With Us.</h2>
+          </div>
+
+      <router-view></router-view>
+      </div>` };
     const contact = { template: `
         <div class="main-view">
-            <h2>Contact</h2>
+
+          <div class="openingContainer">
+            <h2 class='openingTitle'>Contact us.</h2>
+            <h3 class='openingSubTitle'>We'd Love to Hear From You!</h3>
+          </div>
+
             <div id="email" >{{ email.emailToken1 + email.emailToken2 + email.emailToken3 + email.emailToken4 }}</div>
         </div>`,
         data: ()=>{
@@ -31,7 +62,7 @@
                 }
             }
         }
-    }
+    };
 
 
     //***********Side Bar Templates **********
@@ -48,7 +79,7 @@
     <div class="sub-nav">
         <nav>
             <router-link to="/app/coverage">Coverage</router-link>
-            <router-link to="/app/map">Map</router-link>
+            <router-link to="/app/tools">Tools</router-link>
         </nav>
     </div>
 `};
@@ -131,13 +162,15 @@
     const coverage = { template: `
     <div class="sub-view">
         <h3>Coverage</h3>
-        <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=portland%2C%20or&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.maps-erstellen.de">maps-erstellen.de</a></div><style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+        <div><h2>Help Us Bring SpotCheck to An Area near You. </h2>
+        <button class="inLineContact"><router-link to="/contact">Contact Us</router-link></button>
+        </div>
     </div>`};
-    const map = { template: `
+    const tools = { template: `
         <div class="sub-view">
             <h3>Administration Tools</h3>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <img class='adminToolsImg' src='./admintools(1).png' alt='admin tools'>
+            <img class='adminToolsImg' src='./admintools.png' alt='admin tools'>
         </div>` };
 
     //about
@@ -160,10 +193,34 @@
     </div>` };
 
     //Jobs
-    const full = { template: '<div>Part Time Listings</div>' };
-    const part = { template: '<div>Part Time Listings</div>' };
-    const contract = { template: '<div>Contract and Specific Project Listings</div>' };
-    const newest = { template: '<div>New Job Openings<div>' };
+    const full = { template: `
+      <div class='sub-view'>
+      <h3>Full Time Listings</h3>
+      <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+      </div>` };
+    const part = { template: `
+      <div class='sub-view'>
+        <h3>Part Time Listings</h3>
+        <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+      </div>` };
+    const contract = { template: `
+    <div class="sub-view">
+      <h3>Contract and Specific Project Listings</h3>
+      <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+    </div>` };
+    const newest = { template: `
+      <div class='sub-view'>
+        <h3>New Job Openings</h3>
+        <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+      <div>` };
 
 
     const subMenus = {
@@ -179,7 +236,7 @@
             redirect: '/about'
         },
         { path: '/products',
-            components: Object.assign({default:products}, subMenus),
+            components: Object.assign({default: products}, subMenus),
             children:  [{
                 path: '',
                 redirect: '/products/vision'
@@ -199,15 +256,15 @@
             children: [
                 {
                     path: '',
-                    component: map
+                    component: tools
                 },
                 {
                     path: 'coverage',
                     component: coverage
                 },
                 {
-                    path: 'map',
-                    component: map
+                    path: 'tools',
+                    component: tools
                 },
 
             ] },
@@ -263,6 +320,10 @@
     //Mount app with Router
     const app = new Vue({
         router,
+        data: {
+          route: this.$router,
+          s: 'hello'
+        }
     }).$mount('#app')
 
 
