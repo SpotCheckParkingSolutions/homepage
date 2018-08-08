@@ -9,7 +9,8 @@
 
       template:
         `<div class="main-view">
-        <div class="openingContainer"><h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
+        <div class="openingContainer">
+        <h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
           <transition name='fade'>
             <router-view></router-view>
           </transition>
@@ -18,14 +19,37 @@
 
     const our_app = { template:
       `<div class="main-view">
-        <h2>App</h2>
+
+      <div class="openingContainer">
+        <h2 class='openingTitle'>State of the art tools.</h2>
+        <h3 class='openingSubTitle'>Making Parking Administration a Breeze.</h3>
+      </div>
         <router-view></router-view>
       </div>` };
-    const about = { template: `<div class="main-view"><h2>About</h2><router-view></router-view></div>` };
-    const jobs = { template: `<div class="main-view"><h2>Jobs</h2><router-view></router-view></div>` };
+    const about = { template: `
+      <div class="main-view">
+          <div class="openingContainer">
+            <h2 class='openingTitle'>Your destination has arrived.</h2>
+          </div>
+        <router-view></router-view>
+        </div>` };
+    const jobs = { template: `
+      <div class="main-view">
+
+          <div class="openingContainer">
+            <h2 class='openingTitle'>Work With Us.</h2>
+          </div>
+
+      <router-view></router-view>
+      </div>` };
     const contact = { template: `
         <div class="main-view">
-            <h2>Contact</h2>
+
+          <div class="openingContainer">
+            <h2 class='openingTitle'>Contact us.</h2>
+            <h3 class='openingSubTitle'>We'd Love to Hear From You!</h3>
+          </div>
+
             <div id="email" >{{ email.emailToken1 + email.emailToken2 + email.emailToken3 + email.emailToken4 }}</div>
         </div>`,
         data: ()=>{
@@ -167,10 +191,34 @@
     </div>` };
 
     //Jobs
-    const full = { template: '<div>Part Time Listings</div>' };
-    const part = { template: '<div>Part Time Listings</div>' };
-    const contract = { template: '<div>Contract and Specific Project Listings</div>' };
-    const newest = { template: '<div>New Job Openings<div>' };
+    const full = { template: `
+      <div class='sub-view'>
+      <h3>Full Time Listings</h3>
+      <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+      </div>` };
+    const part = { template: `
+      <div class='sub-view'>
+        <h3>Part Time Listings</h3>
+        <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+      </div>` };
+    const contract = { template: `
+    <div class="sub-view">
+      <h3>Contract and Specific Project Listings</h3>
+      <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+    </div>` };
+    const newest = { template: `
+      <div class='sub-view'>
+        <h3>New Job Openings</h3>
+        <div class="jobList">
+          <p>Sorry, We're Not Hiring Right Now!</p>
+        </div>
+      <div>` };
 
 
     const subMenus = {

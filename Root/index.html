@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -14,7 +15,7 @@
 <body>
 	<div id="app">
 			<div class="header">
-        <router-link to='products' class='not-active'><h1 >SpotCheck Parking Solutions</h1></router-link>
+        <router-link to='/products' class='not-active'><h1 >SpotCheck Parking Solutions</h1></router-link>
 					<nav class="main-nav">
 						<div>
 							<router-link to="/products" class="main-link">Products & Services</router-link>
@@ -59,7 +60,6 @@
     window.onscroll = function() {
       headerFunction();
       bottomFunction();
-
     };
 
     var header = document.querySelector(".header");
@@ -80,6 +80,19 @@
       document.querySelector('.contact').classList.remove('bottom');
     }
 };
+  const activeTitle = document.querySelector('.not-active');
+  document.body.addEventListener('click', ()=> {
+    activeTitle.classList.remove('router-link-active');
+  }
+  )
+
+
+  activeTitle.classList.remove('router-link-active');
+  activeTitle.addEventListener('click', ()=>{
+    activeTitle.classList.remove('router-link-exact-active');
+    activeTitle.classList.remove('router-link-active');
+  });
+
     </script>
 </body>
 </html>
