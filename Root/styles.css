@@ -49,7 +49,7 @@ html{
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 100%;
+    width: 100vw;
 }
 
 
@@ -250,6 +250,22 @@ html{
 
 }
 
+.textBlockPContainer{
+  width: 100%;
+  /* border-bottom: 3px solid; */
+  margin-bottom: 10px;
+
+}
+.textBlockP{
+  color: rebeccapurple;
+  margin: auto;
+  max-width: 60vw;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px grey solid;
+}
+
 
 .inLineContact a{
   color: white;
@@ -359,6 +375,7 @@ html{
     flex-direction: row;
     align-items: center;
     padding: 0 5vw 0 5vw;
+    width: 100vw;
   }
 
   .header a{
