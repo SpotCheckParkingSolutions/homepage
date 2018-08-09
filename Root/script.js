@@ -169,7 +169,9 @@
     const tools = { template: `
         <div class="sub-view">
             <h3>Administration Tools</h3>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <div class="textBlockPContainer">
+              <p class="textBlockP">State of the Art Administration tools create an easy way to manage parking areas large and small. Updated by the second, SpotCheck offers a live data stream accesable around the globe. Using the newest and best technologies, SpotCheck allows you to administer a parking lot without leaving your seat!</p>
+            </div>
             <img class='adminToolsImg' src='./admintools.png' alt='admin tools'>
         </div>` };
 
@@ -188,7 +190,7 @@
     <div class="sub-view">
         <h3>Summary</h3>
         <div class="text-blocks">
-            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+            <p>Founded in 2017, SpotCheck is a Parking Solutions company focusing on Machine Vision to bring you the best in Parking Technology. We strive to mprove the safety of parking environments which experience heavy traffic, Create more efficient traffic flow for everyday commuters, and allow for increased convenience upon arrival and departure from a destination.</p>
         </div>
     </div>` };
 
@@ -196,29 +198,29 @@
     const full = { template: `
       <div class='sub-view'>
       <h3>Full Time Listings</h3>
-      <div class="jobList">
-          <p>Sorry, We're Not Hiring Right Now!</p>
+      <div class="jobList textBlockPContainer">
+          <p class="textBlockP">Sorry, We're Not Hiring Right Now!</p>
         </div>
       </div>` };
     const part = { template: `
       <div class='sub-view'>
         <h3>Part Time Listings</h3>
-        <div class="jobList">
-          <p>Sorry, We're Not Hiring Right Now!</p>
+        <div class="jobList textBlockPContainer">
+          <p class="textBlockP">Sorry, We're Not Hiring Right Now!</p>
         </div>
       </div>` };
     const contract = { template: `
     <div class="sub-view">
       <h3>Contract and Specific Project Listings</h3>
-      <div class="jobList">
-          <p>Sorry, We're Not Hiring Right Now!</p>
+      <div class="jobList textBlockPContainer">
+          <p class="textBlockP">Sorry, We're Not Hiring Right Now!</p>
         </div>
     </div>` };
     const newest = { template: `
       <div class='sub-view'>
         <h3>New Job Openings</h3>
-        <div class="jobList">
-          <p>Sorry, We're Not Hiring Right Now!</p>
+        <div class="jobList textBlockPContainer">
+          <p class="textBlockP">Sorry, We're Not Hiring Right Now!</p>
         </div>
       <div>` };
 
