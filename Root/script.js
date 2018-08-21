@@ -124,7 +124,7 @@
         <h4>Our Data</h4>
         <p class="textBlockP">SpotCheck is leading the way in ethical data collection. From determining the average size of cars in your lot, busiest time of day, or the most popular spot, SpotCheck can help answer any question!</p>
             <h4>Your Privacy Matters</h4>
-            <img class='data-img' src='./data.png' alt='big-data'/>
+
             <p class="textBlockP">SpotCheck values privacy above all else, we never track license plates, or store video data for longer than the time it takes to run detection algorithms.</p>
 
 
@@ -155,7 +155,7 @@
     const leadership = { template: `
     <div class="sub-view">
         <h3>The Next Generation of Technology Leaders</h3>
-        <ul>
+        <ul class='leaders'>
             <li><h4>Jacob van de Lindt- CEO</h4><div class='leader-description'>Jacob van de Lindt has several years of experience with neural networks. He acted as an external contractor and intern for ITER, the International Thermonuclear Experimental Reactor in Southern France, where machine learning was applied to improve plasma modeling. He has been a leader at Oregon State University in Inventors Enterprise, a club aiming to create new technology and aid new innovators. Through this club, he organized Hweekend, a technology competition with nearly sixty participants with sponsorship from Hewlett-Packard. He is pursuing a Bachelor in Science in Nuclear Engineering and a Bachelor of Science in Physics, with a minor in mathematics, at the Oregon State University Honors College.
             </div></li>
             <li>Taylor Griffin- CTO</li>

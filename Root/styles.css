@@ -264,6 +264,10 @@ html{
     font-size: 2rem;
 }
 
+.data-text-blocks{
+  margin: auto;
+}
+
 .adminToolsImg{
   width: 60vw;
   height: auto;
@@ -525,4 +529,18 @@ html{
 
 .not-active a{
   color: #292f33;
+}
+
+.leaders{
+  max-width: 60vw;
+  font-size: 1.5rem;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.leaders li{
+  list-style: none;
 }
