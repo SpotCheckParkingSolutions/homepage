@@ -48,18 +48,16 @@
         <div class="main-view">
             <h2 class='openingTitle contactTitle'>Contact us.</h2>
             <h3 class='openingSubTitle contactSubTitle'>We'd Love to Hear From You!</h3>
-            <a href="mailto:{{ email.emailToken1 + email.emailToken2 + email.emailToken3 + email.emailToken4 }}" id="email" class='email'>{{ email.emailToken1 + email.emailToken2 + email.emailToken3 + email.emailToken4 }}</button>
+            <a :href="'mailto:' + emailToken1 + emailToken2 + emailToken3 + emailToken4" id="email" class='email'>{{ emailToken1 + emailToken2 + emailToken3 + emailToken4 }}</a></button>
         </div>`,
-        data: ()=>{
-            return {
-                email: {
-                    emailToken1: "support",
-                    emailToken2: "@",
-                    emailToken3: "spotcheckparking",
-                    emailToken4: ".com"
-                }
-            }
-        }
+        data: ()=> {
+        return ({
+          emailToken1: "support",
+          emailToken2: "@",
+          emailToken3: "spotcheckparking",
+          emailToken4: ".com"
+        })
+      }
     };
 
 
