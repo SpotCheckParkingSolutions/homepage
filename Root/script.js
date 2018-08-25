@@ -9,7 +9,7 @@
 
       template:
         `<div class="main-view">
-        <div class="openingContainer">
+        <div class="openingContainer productsOpeningContainer">
         <h2 class='openingTitle'>Parking services which enhance the efficiency of everyday travel.</h2></div>
           <transition name='fade'>
             <router-view></router-view>
@@ -37,31 +37,27 @@
       <div class="main-view">
 
           <div class="openingContainer">
-            <h2 class='openingTitle'>Work With Us.</h2>
+            <h2 class='openingTitle'>Join Our Team to Revolutionize the way we Commute.</h2>
+            <h3>We strive to hire the best in computer science, business, and engineering.</h3>
+
           </div>
 
       <router-view></router-view>
       </div>` };
     const contact = { template: `
         <div class="main-view">
-
-          <div class="openingContainer">
-            <h2 class='openingTitle'>Contact us.</h2>
-            <h3 class='openingSubTitle'>We'd Love to Hear From You!</h3>
-          </div>
-
-            <div id="email" >{{ email.emailToken1 + email.emailToken2 + email.emailToken3 + email.emailToken4 }}</div>
+            <h2 class='openingTitle contactTitle'>Contact us.</h2>
+            <h3 class='openingSubTitle contactSubTitle'>We'd Love to Hear From You!</h3>
+            <a :href="'mailto:' + emailToken1 + emailToken2 + emailToken3 + emailToken4" id="email" class='email'>{{ emailToken1 + emailToken2 + emailToken3 + emailToken4 }}</a></button>
         </div>`,
-        data: ()=>{
-            return {
-                email: {
-                    emailToken1: "support",
-                    emailToken2: "@",
-                    emailToken3: "spotcheckparking",
-                    emailToken4: ".com"
-                }
-            }
-        }
+        data: ()=> {
+        return ({
+          emailToken1: "support",
+          emailToken2: "@",
+          emailToken3: "spotcheckparking",
+          emailToken4: ".com"
+        })
+      }
     };
 
 
@@ -69,7 +65,7 @@
     const productSidebar = {template: `
     <div class="sub-nav">
         <nav>
-            <router-link to="/products/vision">Machine Vision</router-link>
+            <router-link to="/products/vision">Live Parking Coverage</router-link>
             <router-link to="/products/data">Data</router-link>
         </nav>
     </div>
@@ -108,13 +104,12 @@
     const vision = { template: `
         <div class='sub-view'>
             <h3>SpotCheck's State of the Art Vision Network</h3>
-            <div class="text-blocks">
-                <h4>Section 1</h4>
-                <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</p>
-                <h4>Section 2</h4>
-                <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-                <h4>Section 3</h4>
-                <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+            <div class="text-blocks vision-text-blocks">
+                <h4>Best in the Business</h4>
+                <p class="textBlockP">SpotCheck uses the newest and best in machine learning technology coupled with advanced and cost-effective cameras to create state of the art detection systems. SpotCheck uses a series of neural networks in real time to detect, track, and predict cars in a variety of parking scenarios.</p>
+                <h4>Small or Large, Your Destination Has Arrived</h4>
+                <p class="textBlockP">One camera, or fifty, SpotCheck excels at making parking easy.</p>
+
             </div>
 
 
@@ -123,40 +118,19 @@
     const data = { template: `
     <div class='sub-view'>
         <h3>Ethical, Privacy First Data Services</h3>
-        <div class="text-blocks">
-            <h4>Section 1</h4>
-            <p>Backing equity hypotheses niche market alpha crowdfunding hackathon first mover advantage lean startup ownership. Strategy ramen graphical user interface research & development metrics disruptive pitch bandwidth customer market. Buzz influencer metrics venture angel investor partnership. Network effects rockstar hackathon buyer accelerator. Branding early adopters first mover advantage angel investor agile development crowdfunding influencer return on investment. Analytics iPhone monetization learning curve influencer. Handshake creative mass market monetization seed money focus release startup paradigm shift churn rate responsive web design. Churn rate research & development marketing disruptive deployment equity gen-z freemium crowdfunding assets responsive web design. Network effects branding ownership. Stealth long tail android crowdsource alpha rockstar success traction ramen.</p>
-            <h4>Section 2</h4>
-            <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-            <h4>Section 3</h4>
-            <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
+        <div class="text-blocks data-text-blocks">
+        <h4>Our Data</h4>
+        <p class="textBlockP">SpotCheck is leading the way in ethical data collection. From determining the average size of cars in your lot, busiest time of day, or the most popular spot, SpotCheck can help answer any question!</p>
+            <h4>Your Privacy Matters</h4>
+
+            <p class="textBlockP">SpotCheck values privacy above all else, we never track license plates, or store video data for longer than the time it takes to run detection algorithms.</p>
+
+
 
         </div>
 
     </div>`  };
-    const pricing = { template: `<div class='sub-view'>
-    <h3>Pricing</h3>
-    <div class="text-blocks">
-        <h4>Section 1</h4>
-        <p>Supply chain beta assets pivot ownership branding monetization. Creative long tail advisor churn rate. Agile development responsive web design long tail funding partnership social proof crowdsource. Assets supply chain equity. Product management technology lean startup termsheet. Ecosystem business-to-consumer holy grail launch party stealth buyer freemium interaction design business-to-business stock low hanging fruit strategy. Beta MVP business plan iPhone churn rate. Prototype disruptive business plan gen-z return on investment learning curve iPad stealth focus bootstrapping.</p>
-        <h4>Section 2</h4>
-        <p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.</p>
-        <h4>Section 3</h4>
-        <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
 
-    </div>
-
-</div>` };
-    const quote = { template: `<div class='sub-view'>
-    <h3>Get a Quote</h3>
-    <div class="text-blocks">
-        <h4>Section 1</h4>
-        <img src='./money.jpg' alt='money' height='400px' width='auto'>
-        <p>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.</p>
-
-    </div>
-
-</div>` };
 
     //App
     const coverage = { template: `
@@ -178,19 +152,20 @@
     //about
     const leadership = { template: `
     <div class="sub-view">
-        <h3>Leadership</h3>
-        <ul>
-            <li>Jacob van de Lindt- CEO</li>
+        <h3>The Next Generation of Technology Leaders</h3>
+        <ul class='leaders'>
+            <li><h4>Jacob van de Lindt- CEO</h4><div class='leader-description'>Jacob van de Lindt has several years of experience with neural networks. He acted as an external contractor and intern for ITER, the International Thermonuclear Experimental Reactor in Southern France, where machine learning was applied to improve plasma modeling. He has been a leader at Oregon State University in Inventors Enterprise, a club aiming to create new technology and aid new innovators. Through this club, he organized Hweekend, a technology competition with nearly sixty participants with sponsorship from Hewlett-Packard. He is pursuing a Bachelor in Science in Nuclear Engineering and a Bachelor of Science in Physics, with a minor in mathematics, at the Oregon State University Honors College.
+            </div></li>
             <li>Taylor Griffin- CTO</li>
             <li>Alex De Paz - COO</li>
             <li>Cooper Runstein- CFO</li>
         </ul>
     </div>` };
     const summary = { template: `
-    <div class="sub-view">
-        <h3>Summary</h3>
+    <div class="sub-view summary-view">
+        <h3>SpotCheck</h3>
         <div class="text-blocks">
-            <p>Founded in 2017, SpotCheck is a Parking Solutions company focusing on Machine Vision to bring you the best in Parking Technology. We strive to mprove the safety of parking environments which experience heavy traffic, Create more efficient traffic flow for everyday commuters, and allow for increased convenience upon arrival and departure from a destination.</p>
+            <p class="textBlockP">Founded in 2017, SpotCheck is a parking solutions company which utilizes state of the art machine vision to bring you the best in parking technology. We strive to modernize existing parking infrastructure and roadways by providing real-time coverage of available parking, creating more efficient traffic flow for everyday commuters, and improving the safety of parking environments which experience heavy traffic. </p>
         </div>
     </div>` };
 
@@ -210,19 +185,22 @@
         </div>
       </div>` };
     const contract = { template: `
-    <div class="sub-view">
-      <h3>Contract and Specific Project Listings</h3>
-      <div class="jobList textBlockPContainer">
-          <p class="textBlockP">Sorry, We're Not Hiring Right Now!</p>
-        </div>
-    </div>` };
+      <div class="sub-view">
+        <h3>Contract and Specific Project Listings</h3>
+        <div class="jobList textBlockPContainer">
+            <p class="textBlockP">Sorry, We're Not Hiring Right Now!</p>
+          </div>
+      </div>`
+    };
+
     const newest = { template: `
       <div class='sub-view'>
         <h3>New Job Openings</h3>
         <div class="jobList textBlockPContainer">
           <p class="textBlockP">Sorry, We're Not Hiring Right Now!</p>
         </div>
-      <div>` };
+      </div>`
+    };
 
 
     const subMenus = {
@@ -324,7 +302,6 @@
         router,
         data: {
           route: this.$router,
-          s: 'hello'
         }
     }).$mount('#app')
 

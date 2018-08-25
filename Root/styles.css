@@ -7,11 +7,11 @@
 }
 a{
     text-decoration: none;
-    color: rebeccapurple;
+    color: #674FA5;
 }
 
 a:visited{
-  color: rebeccapurple;
+  color: #674FA5;
 }
 
 /*Hide X-axis scroll */
@@ -44,12 +44,25 @@ html{
 /*******************/
 /*>>>>>Header >>>>>>/
 /*******************/
+
+.main-nav div:last-child{
+  margin-left: auto;
+  margin-right: 5vw;
+  background-color: #674FA5;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 10px grey;
+  transition: box-shadow .6s;
+}
+
 .header{
     grid-area: header;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100vw;
+    background-color: #674FA5;
+    /* color: #ffffff; */
 }
 
 
@@ -57,7 +70,34 @@ html{
 .header h1{
     font-size: 3rem;
     display: inline;
+    color: white;
 
+}
+
+.header a{
+  color: white;
+}
+
+.header .main-nav .contact{
+  background: #fff;
+  color: #674FA5;
+}
+
+.header .main-nav .contact a{
+  color: #674FA5;
+}
+
+
+.sticky h1{
+  color: #674FA5;
+}
+
+.sticky .main-nav div a{
+  color: black;
+}
+
+.sticky .main-nav div a:visited{
+  color: black;
 }
 /*>>>>>>> Header Nav bar >>>>>>*/
 .main-nav{
@@ -94,15 +134,7 @@ html{
     opacity: 1;
 }
 
-.main-nav div:last-child{
-  margin-left: auto;
-  margin-right: 5vw;
-  background-color: rebeccapurple;
-  padding: 5px;
-  border-radius: 15px;
-  box-shadow: 1px 1px 10px grey;
-  transition: box-shadow .6s;
-}
+
 
 .main-nav div:last-child a{
   color: white;
@@ -131,7 +163,7 @@ html{
 
 
 .sub-nav{
-    background: rebeccapurple;
+    background: #674FA5;
     position: absolute;
     opacity: 0;
     width: 15vw;
@@ -170,13 +202,13 @@ html{
     text-align: center;
 }
 
-/* .main-view h2{
-    margin-top: 2rem;
-    font-size: 5rem;
-  } */
+.vision-text-blocks{
+  margin: auto;
+}
 .sub-view{
     margin-top: 4rem;
     min-height: 100vh;
+    text-align: center;
 }
 
 .sub-view h3{
@@ -203,6 +235,9 @@ html{
   right: 10vw;
 }
 
+/* .data-img{
+  width: 100vw;
+} */
 
 .back:hover{
   transform: translate(-2vw);
@@ -216,7 +251,7 @@ html{
 .text-blocks {
     position: relative;
     max-width: 60vw;
-    margin: auto;
+    /* margin: auto; */
 }
 
 .text-blocks h4{
@@ -229,12 +264,16 @@ html{
     font-size: 2rem;
 }
 
+.data-text-blocks{
+  margin: auto;
+}
+
 .adminToolsImg{
   width: 60vw;
   height: auto;
 }
 
-.inLineContact{
+.inLineContact, .email{
   padding: 10px;
   border-radius: 15px;
   background-color: royalblue;
@@ -257,7 +296,7 @@ html{
 
 }
 .textBlockP{
-  color: rebeccapurple;
+  color: #674FA5;
   margin: auto;
   max-width: 60vw;
   font-size: 20px;
@@ -285,6 +324,8 @@ html{
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid #292f33;
+    background-color: black;
+    color: #fff;
 }
 
 .websiteInfo{
@@ -311,7 +352,7 @@ html{
 }
 
 .socialMedia img:hover{
-  box-shadow: 1px 1px 50px rebeccapurple;
+  box-shadow: 1px 1px 50px #674FA5;
 }
 
 
@@ -336,22 +377,29 @@ html{
 
 
 .router-link-active{
-    color: green;
+   font-style: italic;
 }
 .router-link-active:visited{
-    color: green;
+  font-style: italic;
 }
 
 .openingTitle{
-  max-width: 50vw;
   font-size: 5rem;
   color: #292f33;
 }
 
 .openingSubTitle{
-  max-width: 50vw;
   font-size: 3rem;
   color: #292f33;
+  padding-bottom: 5vh;
+}
+
+.contactTitle{
+  margin:auto;
+}
+
+.contactSubTitle{
+  margin:auto;
 }
 
 .openingContainer{
@@ -359,7 +407,33 @@ html{
   border-top: white 4px solid;
   margin-top: -1px;
   border-bottom: 1px white solid;
-  box-shadow: 1px 2px 30px rebeccapurple;
+  box-shadow: 1px 2px 30px #674FA5;
+}
+
+.leader-description{
+  max-width: 60vw;
+  margin: auto;
+}
+
+.summary-view{
+  display: flex;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.summary-view h3{
+  font-size: 40px;
+}
+
+.summary-view .text-blocks{
+  max-width: 35vw;
+  border: none;
+}
+
+.summary-view .text-blocks p{
+  border: none;
 }
 
 @media only screen and (min-width: 900px) {
@@ -370,7 +444,6 @@ html{
 }
 
   .header{
-    background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -390,11 +463,10 @@ html{
     padding-right: 2.5vw;
   }
 
-  .openingTitle{
+  /* .openingTitle{
     max-width: 40vw;
     margin-left: 5vw;
-
-  }
+  } */
 }
 
 
@@ -457,4 +529,18 @@ html{
 
 .not-active a{
   color: #292f33;
+}
+
+.leaders{
+  max-width: 60vw;
+  font-size: 1.5rem;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.leaders li{
+  list-style: none;
 }
